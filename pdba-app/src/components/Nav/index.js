@@ -1,0 +1,101 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+class Nav extends Component {
+    state = {
+        open: false,
+        width: window.innerWidth
+    };
+
+    updateWidth = () => {
+        const newState = { width: window.innerWidth };
+
+        if (this.state.open && newState.width > 991) {
+            newState.open = false;
+        }
+
+        this.setState(newState);
+    };
+
+    toggleNav = () => {
+        this.setState({ open: !this.state.open });
+      };
+    
+    componentDidMount() {
+        window.addEventListener("resize", this.updateWidth);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWidth);
+    }
+
+    render() {
+        return (
+            <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+                <Link className="navbar-brand" to="/">
+                    PDBA
+                </Link>
+                <button
+                    onClick={this.toggleNav}
+                    className="navbar-toggler"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon" />
+                </button>
+                <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <Link
+                                onClick={this.toggleNav}
+                                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+                                to="/News"
+                            >
+                                Search
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                onClick={this.toggleNav}
+                                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                                to="/Contact"
+                            >
+                                Saved
+                            </Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <div className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Galleries
+                            </div>
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <div className="dropdown-item" href="#">
+                                <Link
+                                    onClick={this.toggleNav}
+                                    className={window.location.pathname === "/ImgGallery" ? "nav-link active" : "nav-link"}
+                                    to="/ImgGallery"
+                                >
+                                    Saved
+                                </Link>
+                                </div>
+                                <div className="dropdown-item" href="#">
+                                <Link
+                                    onClick={this.toggleNav}
+                                    className={window.location.pathname === "/VidGallery" ? "nav-link active" : "nav-link"}
+                                    to="/VidGallery"
+                                >
+                                    Saved
+                                </Link>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        );
+    }
+}
+
+export default Nav;
