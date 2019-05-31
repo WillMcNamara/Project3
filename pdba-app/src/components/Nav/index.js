@@ -1,101 +1,44 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Nav from "react-bootstrap/Nav";
+import "./style.css";
 
-class Nav extends Component {
+class Navb extends Component {
     state = {
         open: false,
-        width: window.innerWidth
+        width: window.innerWidth,
+        dropped: false
     };
-
-    updateWidth = () => {
-        const newState = { width: window.innerWidth };
-
-        if (this.state.open && newState.width > 991) {
-            newState.open = false;
-        }
-
-        this.setState(newState);
-    };
-
-    toggleNav = () => {
-        this.setState({ open: !this.state.open });
-      };
-    
-    componentDidMount() {
-        window.addEventListener("resize", this.updateWidth);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.updateWidth);
-    }
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-                <Link className="navbar-brand" to="/">
-                    PDBA
-                </Link>
-                <button
-                    onClick={this.toggleNav}
-                    className="navbar-toggler"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                    >
-                        <span className="navbar-toggler-icon" />
-                </button>
-                <div className={`${this.state.open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link
-                                onClick={this.toggleNav}
-                                className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
-                                to="/News"
-                            >
-                                Search
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link
-                                onClick={this.toggleNav}
-                                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
-                                to="/Contact"
-                            >
-                                Saved
-                            </Link>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <div className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Galleries
-                            </div>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <div className="dropdown-item" href="#">
-                                <Link
-                                    onClick={this.toggleNav}
-                                    className={window.location.pathname === "/ImgGallery" ? "nav-link active" : "nav-link"}
-                                    to="/ImgGallery"
-                                >
-                                    Saved
-                                </Link>
-                                </div>
-                                <div className="dropdown-item" href="#">
-                                <Link
-                                    onClick={this.toggleNav}
-                                    className={window.location.pathname === "/VidGallery" ? "nav-link active" : "nav-link"}
-                                    to="/VidGallery"
-                                >
-                                    Saved
-                                </Link>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+                <Navbar.Brand href="/">PDBA</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/About">About</Nav.Link>
+                        <Nav.Link href="/News">News</Nav.Link>
+                        <Nav.Link href="/Contact">Contact</Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <NavDropdown className="dropDown" title="Galleries" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="/ImgGallery">Image Gallery</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/VidGallery">Video Gallery</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown className="dropDown" title="Calendars" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="/PracticeCal">Team Calendar</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="/BoatCal">Boat Singout</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link href="/Links">Other Useful Links</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>     
         );
     }
 }
 
-export default Nav;
+export default Navb;

@@ -9,7 +9,7 @@ import PracticeCal from "./pages/PracticeCal";
 import BoatCal from "./pages/BoatCal";
 import Links from "./pages/Links";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Navb from "./components/Nav";
 import Footer from "./components/Footer"
 
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Navb />
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route exact path="/News" component={News} />
