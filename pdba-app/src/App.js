@@ -29,7 +29,7 @@ function App() {
           <Route exact path="/Links" component={Links} />
           <Route component={NoMatch} /> */}
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </Router>
   );
