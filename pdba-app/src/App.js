@@ -20,14 +20,14 @@ function App() {
         <Navb />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/News" component={News} />
+          <Route exact path="/News" component={News} />
           <Route exact path="/Contact" component={Contact} />
           <Route exact path="/ImgGallery" component={ImgGallery} />
           <Route exact path="/VidGallery" component={VidGallery} />
           <Route exact path="/PracticeCal" component={PracticeCal} />
           <Route exact path="/BoatCal" component={BoatCal} />
           <Route exact path="/Links" component={Links} />
-          <Route component={NoMatch} /> */}
+          <Route component={NoMatch} />
         </Switch>
         <Footer/>
       </div>
