@@ -7,11 +7,11 @@ class Story extends Component {
     render() {
         console.log(this.props)
         return(
-            <Row>
-                <Col size="md-4">
-                <img className="news-img" src={this.props.image}/>
+            <Row classes="pt-2">
+                <Col size="md-4" classes="news-row">
+                    <img className="news-img" src={this.props.image}/>
                 </Col>
-                <Col size="md-8">
+                <Col size="md-8" classes="news-row">
                     <h4 className="story-title">{this.props.title}</h4>
                     <h5 className="story-author">{this.props.author}</h5>
                     <p className="story-text">{this.props.synopsis}</p>
