@@ -18,7 +18,7 @@ class Footer extends Component {
                             </div>
                         </Col>
                         <Col size="md-6">
-                            <div className="footer-copyright text-center py-1">Philadelphia Dragon Boat Association © All Rights Reserved
+                            <div className="footer-copyright text-center py-2">Philadelphia Dragon Boat Association © All Rights Reserved
                             </div>
                         </Col>
                         <Col size="md-3">

@@ -5,11 +5,6 @@ import Nav from "react-bootstrap/Nav";
 import "./style.css";
 
 class Navb extends Component {
-    state = {
-        open: false,
-        width: window.innerWidth,
-        dropped: false
-    };
 
     render() {
         return (
