@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Container} from "../components/grid";
+import {Container, Row, Col} from "../components/grid";
 import Story from "../components/Story";
 
 class Home extends Component {
@@ -20,6 +20,13 @@ class Home extends Component {
         console.log(this.state.stories)
         return (
             <Container>
+                <Row>
+                    <Col size="md-4">
+                        <h2>Latest News</h2>
+                    </Col>
+                    <Col size="md-8">
+                    </Col>
+                </Row>
                 {this.state.stories.map(story => (
                     console.log(story),
                     <Story
@@ -30,7 +37,11 @@ class Home extends Component {
                         image={story.image}
                     />
                 ))}
-
+                <Row>
+                    <Col size="md-12" classes="text-center font-small">
+                        <a href="#">News Archive</a>
+                    </Col>
+                </Row>
             </Container>
         )
     }

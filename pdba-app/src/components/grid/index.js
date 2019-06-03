@@ -18,7 +18,7 @@ export function Row({ children }) {
 export function Col({ size, classes, children }) {
   return (
     <div
-      className={"col-" + size + " " + classes}
+      className={`col-${size} ${classes ? classes : ""}`}
     >
       {children}
     </div>
