@@ -35,7 +35,6 @@ class Home extends Component {
                     </Col>
                 </Row>
                 {this.state.stories.map(story => (
-                    console.log(story),
                     <Story
                         key={story.id}
                         title={story.title}
