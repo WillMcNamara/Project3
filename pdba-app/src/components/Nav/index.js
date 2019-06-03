@@ -8,7 +8,7 @@ class Navb extends Component {
 
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Navbar className="border-bottom border-dark" collapseOnSelect expand="lg" bg="primary" variant="dark">
                 <Navbar.Brand href="/">PDBA</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

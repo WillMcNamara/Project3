@@ -7,7 +7,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="pt-2 small bg-danger">
+            <footer className="pt-2 small bg-primary border-top border-dark">
                 <div className="container pb-0">
                     <Row>
                         <Col size="md-3">
