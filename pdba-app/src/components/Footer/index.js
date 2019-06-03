@@ -3,7 +3,6 @@ import {Container, Row, Col} from "../grid";
 import "./style.css";
 
 class Footer extends Component {
-    state = {}
 
     render() {
         return (

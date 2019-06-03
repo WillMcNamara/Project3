@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
 import ImgGallery from "./pages/ImgGallery";
@@ -22,6 +23,7 @@ function App() {
           <Navb />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/About" component={About} />
             <Route exact path="/News" component={News} />
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/ImgGallery" component={ImgGallery} />

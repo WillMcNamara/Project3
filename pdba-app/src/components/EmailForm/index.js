@@ -27,7 +27,7 @@ class EmailForm extends Component {
                     <label htmlFor="message">Message:</label>
                     <textarea rows="5" className="bigolthinger form-control" type="text" id="message" name="message" placeholder="Your message..."/>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" className="btn btn-primary mb-2">Submit</button>
             </form>
         )
     }
