@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col} from "../grid";
+import {Row, Col} from "../grid";
 import "./style.css";
 
 class Footer extends Component {

@@ -10,7 +10,7 @@ class Home extends Component {
                 <Row classes="border-bottom border-dark">
                     <Col size="md-12" classes="text-left">
                         <h2 className="border-bottom border-secondary">Contact Us</h2>
-                        <p>Send us a message if you are interested in joining or trying out!</p>
+                        <h6>Send us a message if you are interested in joining or trying out!</h6>
                     </Col>
                 </Row>
                 <Row>

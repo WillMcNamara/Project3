@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Col, Row} from "../grid";
 import "./style.css";
 
 class EmailForm extends Component {
