@@ -33,7 +33,7 @@ class Home extends Component {
     render() {
         console.log(this.state.stories)
         return (
-            <Container classes="bg-white border-left my-3 border-top border-right border-dark">
+            <Container classes="bg-white my-3 border border-dark">
                 <Row>
                     <Col size="md-4">
                         <h2 className="border-bottom border-light">Latest News</h2>
