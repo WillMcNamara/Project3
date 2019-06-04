@@ -63,7 +63,7 @@ class About extends Component {
 
     render(){
         return (
-            <Container classes="bg-light border-left border-right border-dark">
+            <Container classes="bg-light border my-3 border-dark">
                 <Row classes="border-bottom border-dark">
                     <Col size="md-8" classes="border-right border-dark">
                         <Row classes="border-bottom border-dark">

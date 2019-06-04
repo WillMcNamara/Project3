@@ -69,7 +69,7 @@ class Home extends Component {
                 )
             }
             return (
-                <Container>
+                <Container classes="my-3 border-dark border bg-light">
                     {vidRows}
                 </Container>
             )

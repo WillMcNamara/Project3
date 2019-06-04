@@ -40,7 +40,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Container classes="bg-light">
+            <Container classes="my-3 border border-dark bg-light">
                 <Row>
                     <Col size="md-9 border-bottom border-right border-secondary">
                         <h1>Philadelphia Dragon Boat Association</h1>

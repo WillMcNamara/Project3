@@ -70,7 +70,7 @@ class ImgGallery extends Component {
         }
 
         return (
-            <Container>
+            <Container classes="my-3 border border-dark bg-light">
                 {imageRows}
             </Container>
         )

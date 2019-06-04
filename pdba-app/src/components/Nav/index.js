@@ -8,8 +8,8 @@ class Navb extends Component {
 
     render() {
         return (
-            <Navbar className="border-bottom border-dark" collapseOnSelect expand="lg" bg="primary" variant="dark">
-                <Navbar.Brand href="/">PDBA</Navbar.Brand>
+            <Navbar className="navthegator border-bottom border-dark" collapseOnSelect expand="lg" variant="dark">
+                <Navbar.Brand href="/"><img className="logo" src="http://nebula.wsimg.com/9ded58bed73da13862f641e537dfad90?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1"/>PDBA</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">

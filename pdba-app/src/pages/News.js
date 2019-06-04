@@ -7,7 +7,7 @@ class Home extends Component {
     state = {
         stories: [
             {
-                id: 1,
+                id: 0,
                 title: "Post 1",
                 author: "Will M",
                 synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
@@ -15,11 +15,18 @@ class Home extends Component {
             },
             {
                 id: 1,
-                title: "Post 1",
+                title: "Post 2",
+                author: "Will M",
+                synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
+                image: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
+            },
+            {
+                id: 2,
+                title: "Post 3",
                 author: "Will M",
                 synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
                 image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
-            }
+            },
         ]
     }
 

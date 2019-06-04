@@ -6,7 +6,7 @@ class Home extends Component {
    
     render() {
         return (
-            <Container classes="bg-light border-right border-left border-dark">
+            <Container classes="bg-light my-3 border border-dark">
                 <Row classes="border-bottom border-dark">
                     <Col size="md-12" classes="text-left">
                         <h2 className="border-bottom border-secondary">Contact Us</h2>
