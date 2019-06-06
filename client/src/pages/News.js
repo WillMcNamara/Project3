@@ -6,36 +6,10 @@ import API from "../utils/API";
 class Home extends Component {
 
     state = {
-        stories: [
-            {
-                id: 0,
-                title: "Post 1",
-                author: "Will M",
-                synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
-                text: "sample text",
-                image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
-            },
-            {
-                id: 1,
-                title: "Post 2",
-                author: "Will M",
-                synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
-                text: "sample text",
-                image: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
-            },
-            {
-                id: 2,
-                title: "Post 3",
-                author: "Will M",
-                synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
-                text: "sample text",
-                image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
-            },
-        ]
+        stories: []
     }
 
     componentDidMount(){
-        console.log("hello")
         this.grabNews();
     }
 
@@ -53,17 +27,21 @@ class Home extends Component {
             );
     };
 
-    makeifyNews = () => {
+    makeifyNews = (data) => {
         API.postNews({
-            title: "Post 3",
-            author: "Will M",
-            synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
-            text: "sample text",
-            image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
+            title: data.title,
+            author: data.author,
+            synopsis: data.synopsis,
+            text: data.text,
+            image: data.image
         })
             .then(() => {
                 this.grabNews();
             })          
+    }
+
+    deleteNews = id => {
+        API.deleteNewsId(id).then(() => this.grabNews())
     }
 
     render() {
@@ -78,11 +56,19 @@ class Home extends Component {
                 </Row>
                 {this.state.stories.map(story => (
                     <Story
-                        key={story.id}
+                        key={story._id}
                         title={story.title}
                         author={story.author}
                         synopsis={story.synopsis}
                         image={story.image}
+                        Button={() => (
+                            <button
+                                onClick={() => this.deleteNews(story._id)}
+                                className="btn btn-danger"
+                            >
+                                Delete
+                            </button>
+                        )}
                     />
                 ))}
                 <Row>

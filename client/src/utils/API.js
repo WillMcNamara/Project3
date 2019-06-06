@@ -11,55 +11,55 @@ export default {
     },
     //grabs article by id
     getNewsId: function(id) {
-        return axios.get(`/api/${id}`);
+        return axios.get(`/api/news/${id}`);
     },    
     //updates article by id
     putNewsId: function(id) {
-        return axios.put(`/api/${id}`);
+        return axios.put(`/api/news/${id}`);
     },
     //deletes article by id
     deleteNewsId: function(id) {
-        return axios.delete(`/api/${id}`);
+        return axios.delete(`/api/news/${id}`);
     },
     // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
-    // 
-    get: function() {
-        return axios.get("/api/");
-    },
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
+    // // 
+    // get: function() {
+    //     return axios.get("/api/");
+    // },
     
 }

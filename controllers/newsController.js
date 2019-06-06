@@ -13,7 +13,6 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-      console.log(req.body);
       db.News.create(req.body)
         .then(dbNews => res.json(dbNews))
         .catch(err => res.status(422).json(err));
@@ -24,6 +23,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
+      console.log(req.params);
       db.News.findById(req.params.id)
         .then(dbNews => dbNews.remove())
         .then(dbNews => res.json(dbNews))
