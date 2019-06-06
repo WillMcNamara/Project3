@@ -45,6 +45,7 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <Container classes="bg-white my-3 border border-dark">
                 <Row>
@@ -61,6 +62,7 @@ class Home extends Component {
                         author={story.author}
                         synopsis={story.synopsis}
                         image={story.image}
+                        id={story._id}
                         Button={() => (
                             <button
                                 onClick={() => this.deleteNews(story._id)}

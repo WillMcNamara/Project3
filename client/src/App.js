@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import News from "./pages/News";
+import Article from "./pages/Article";
 import Contact from "./pages/Contact";
 import ImgGallery from "./pages/ImgGallery";
 import VidGallery from "./pages/VidGallery";
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/About" component={About} />
             <Route exact path="/News" component={News} />
+            <Route path="/Article/:id" component={Article}/>
             <Route exact path="/Contact" component={Contact} />
             <Route exact path="/ImgGallery" component={ImgGallery} />
             <Route exact path="/VidGallery" component={VidGallery} />
