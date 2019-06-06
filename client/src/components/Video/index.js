@@ -7,7 +7,7 @@ class Video extends Component {
         return (
             <div>
                 <h4>{this.props.title}</h4>
-                <iframe width="420" height="315" src={this.props.src}/>
+                <iframe title={this.props.title} width="420" height="315" src={this.props.src}/>
             </div>
         )
     }
