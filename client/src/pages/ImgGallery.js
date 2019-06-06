@@ -6,18 +6,7 @@ import API from "../utils/API";
 class ImgGallery extends Component {
 
     state = {
-        images: [
-            {
-                id: 0,
-                title: "0",
-                link: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
-            },
-            {
-                id: 1,
-                title: "1",
-                link: "https://www.w3schools.com/w3css/img_snow_wide.jpg"
-            },
-        ]
+        images: []
     }
 
     componentDidMount(){
@@ -39,7 +28,6 @@ class ImgGallery extends Component {
     }
 
     render() {
-        console.log(this.state)
         const imageRows = [];
         // format the images into rows
         for (let i = 0; i < this.state.images.length; i += 2) {
