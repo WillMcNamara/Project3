@@ -29,15 +29,15 @@ export default {
     getVid: function() {
         return axios.get("/api/gals/videos");
     },
+    //check if username exists
+    login: function(name) {
+        return axios.post("/api/users/login", name);
+    },
+    //make user
+    signup: function(name, password) {
+        return axios.post("/api/users/signup", name, password);
+    },
     // 
-    // get: function() {
-    //     return axios.get("/api/");
-    // },
-    // // 
-    // get: function() {
-    //     return axios.get("/api/");
-    // },
-    // // 
     // get: function() {
     //     return axios.get("/api/");
     // },

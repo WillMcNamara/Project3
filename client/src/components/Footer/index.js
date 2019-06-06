@@ -1,24 +1,49 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import {Row, Col} from "../grid";
 import "./style.css";
+import API from "../../utils/API";
 
 class Footer extends Component {
 
-    handleShow = this.handleShow.bind(this);
-    handleClose = this.handleClose.bind(this);
+    // handleShow = this.handleShow.bind(this);
+    // handleClose = this.handleClose.bind(this);
 
     state = {
       show: false,
+      name: "",
+      password: "",
     };
 
-    handleClose() {
-        this.setState({ show: false });
+    handleInputChange = event => {
+        const {name, value} = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+    
+    handleClose = () => this.setState({ show: false });
+
+    handleShow = () => this.setState({ show: true });
+
+    login = e => {
+        e.preventDefault();
+        API.login(this.state.name).then(res => {
+            if (!res) {
+                return console.log("no user");
+            } 
+            else if (this.state.password = res.password) {
+                window.localStorage.setItem("user", res.name);
+            }
+        })
     }
 
-    handleShow() {
-        this.setState({ show: true });
+    signUp = e => {
+        e.preventDefault();
+        API.signup(this.state.name, this.state.password).then(res => {
+            console.log(res);
+        })
     }
 
     render() {
@@ -36,15 +61,25 @@ class Footer extends Component {
                                     <Modal.Header closeButton>
                                         <Modal.Title>Login</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                                    <Modal.Footer>
-                                        <Button variant="success" onClick={this.handleClose}>
-                                            Sign-up
-                                        </Button>
-                                        <Button variant="primary" onClick={this.handleClose}>
-                                            Login
-                                        </Button>
-                                    </Modal.Footer>
+                                    <form action="#">
+                                        <Modal.Body>
+                                                <div className="form-group">
+                                                    <label htmlFor="name">Name:</label>
+                                                    <input onChange={this.handleInputChange} className="form-control" type="text" value={this.state.name} id="name" name="name" placeholder="Your name..."/>
+                                                    
+                                                    <label htmlFor="password">Password:</label>
+                                                    <input onChange={this.handleInputChange} className="form-control" type="password" value={this.state.password} id="password" name="password" placeholder="Your password..."/>
+                                                </div>
+                                        </Modal.Body>
+                                        <Modal.Footer>
+                                            <Button variant="success" onClick={this.signUp}>
+                                                Sign-up
+                                            </Button>
+                                            <Button variant="primary" onClick={this.login}>
+                                                Login
+                                            </Button>
+                                        </Modal.Footer>
+                                    </form>
                                 </Modal>
                             </div>
                         </Col>
