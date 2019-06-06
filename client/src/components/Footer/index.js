@@ -12,7 +12,7 @@ class Footer extends Component {
 
     state = {
       show: false,
-      name: "",
+      user: "",
       password: "",
     };
 
@@ -29,12 +29,12 @@ class Footer extends Component {
 
     login = e => {
         e.preventDefault();
-        API.login(this.state.name).then(res => {
+        API.login(this.state.user).then(res => {
             if (!res) {
                 return console.log("no user");
             } 
             else if (this.state.password = res.password) {
-                window.localStorage.setItem("user", res.name);
+                window.localStorage.setItem("user", res.user);
             }
         })
     }
@@ -42,7 +42,7 @@ class Footer extends Component {
     signUp = e => {
         e.preventDefault();
         API.signup({
-            name: this.state.name, 
+            user: this.state.user, 
             password: this.state.password
             }).then(res => {
                 console.log(res);
@@ -67,8 +67,8 @@ class Footer extends Component {
                                     <form action="#">
                                         <Modal.Body>
                                                 <div className="form-group">
-                                                    <label htmlFor="name">Name:</label>
-                                                    <input onChange={this.handleInputChange} className="form-control" type="text" value={this.state.name} id="name" name="name" placeholder="Your name..."/>
+                                                    <label htmlFor="user">Name:</label>
+                                                    <input onChange={this.handleInputChange} className="form-control" type="text" value={this.state.user} id="user" name="user" placeholder="Your name..."/>
                                                     
                                                     <label htmlFor="password">Password:</label>
                                                     <input onChange={this.handleInputChange} className="form-control" type="password" value={this.state.password} id="password" name="password" placeholder="Your password..."/>

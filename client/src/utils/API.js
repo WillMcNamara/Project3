@@ -35,6 +35,7 @@ export default {
     },
     //make user
     signup: function(userInfo) {
+        console.log(userInfo)
         return axios.post("/api/users/signup", userInfo);
     },
     // 
