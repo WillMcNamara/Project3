@@ -41,8 +41,11 @@ class Footer extends Component {
 
     signUp = e => {
         e.preventDefault();
-        API.signup(this.state.name, this.state.password).then(res => {
-            console.log(res);
+        API.signup({
+            name: this.state.name, 
+            password: this.state.password
+            }).then(res => {
+                console.log(res);
         })
     }
 

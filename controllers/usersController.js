@@ -4,14 +4,14 @@ const db = require("../models");
 module.exports = {
     //login
     login: function(req, res) {
-      db.News.find({})
-        .then(dbNews => res.json(dbNews))
+      db.Users.find()
+        .then(dbUsers => res.json(dbUsers))
         .catch(err => res.status(422).json(err));
     },
     //signup
     signup: function(req, res) {
-      db.News.create(req.body)
-        .then(dbNews => res.json(dbNews))
+      db.Users.create(req.body)
+        .then(dbUsers => res.json(dbUsers))
         .catch(err => res.status(422).json(err));
     },
   };
