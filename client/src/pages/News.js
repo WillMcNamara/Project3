@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Container, Row, Col} from "../components/grid";
 import Story from "../components/Story";
+import API from "../utils/API";
 
 class Home extends Component {
 
@@ -11,6 +12,7 @@ class Home extends Component {
                 title: "Post 1",
                 author: "Will M",
                 synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
+                text: "sample text",
                 image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
             },
             {
@@ -18,6 +20,7 @@ class Home extends Component {
                 title: "Post 2",
                 author: "Will M",
                 synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
+                text: "sample text",
                 image: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
             },
             {
@@ -25,13 +28,45 @@ class Home extends Component {
                 title: "Post 3",
                 author: "Will M",
                 synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
+                text: "sample text",
                 image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
             },
         ]
     }
 
+    componentDidMount(){
+        console.log("hello")
+        this.grabNews();
+    }
+
+    grabNews = () => {
+        API.getNews()
+            .then(res =>
+                this.setState({
+                    stories: res.data
+                })
+            )
+            .catch(() =>
+                this.setState({
+                    stories: []
+                })
+            );
+    };
+
+    makeifyNews = () => {
+        API.postNews({
+            title: "Post 3",
+            author: "Will M",
+            synopsis: "Things happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happenedThings happened ",
+            text: "sample text",
+            image: "https://cdn.pixabay.com/photo/2018/10/30/16/06/water-lily-3784022__340.jpg"
+        })
+            .then(() => {
+                this.grabNews();
+            })          
+    }
+
     render() {
-        console.log(this.state.stories)
         return (
             <Container classes="bg-white my-3 border border-dark">
                 <Row>

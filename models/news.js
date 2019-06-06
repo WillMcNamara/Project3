@@ -9,6 +9,6 @@ const newsSchema = new Schema({
   image: { type: String, required: true },
 });
 
-const News = mongoose.model("New", newsSchema);
+const News = mongoose.model("News", newsSchema);
 
 module.exports = News;

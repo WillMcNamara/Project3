@@ -11,7 +11,7 @@ const videosSchema = new Schema({
   link: { type: String, required: true },
 });
 
-const Images = mongoose.model("Image", imagesSchema);
-const Videos = mongoose.model("Video", videosSchema)
+const Images = mongoose.model("Images", imagesSchema);
+const Videos = mongoose.model("Videos", videosSchema)
 
 module.exports = Images, Videos;

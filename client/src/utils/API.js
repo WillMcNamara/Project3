@@ -2,12 +2,64 @@ import axios from "axios";
 
 export default {
     //grabs news
-    getNews: function(q) {
-        return axios.get("/api/news"), {params:{q: q}}
+    getNews: function() {
+        return axios.get("/api/news");
     },
-    //grab images
-    getImages: function(q) {
-        return axios.get("/api/images"), {params:{q: q}}
-    }
-    //other similar grabs
+    //posts new article
+    postNews: function(newsData) {
+        return axios.post("/api/news", newsData);
+    },
+    //grabs article by id
+    getNewsId: function(id) {
+        return axios.get(`/api/${id}`);
+    },    
+    //updates article by id
+    putNewsId: function(id) {
+        return axios.put(`/api/${id}`);
+    },
+    //deletes article by id
+    deleteNewsId: function(id) {
+        return axios.delete(`/api/${id}`);
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    // 
+    get: function() {
+        return axios.get("/api/");
+    },
+    
 }
