@@ -30,8 +30,8 @@ export default {
         return axios.get("/api/gals/videos");
     },
     //check if username exists
-    login: function(name) {
-        return axios.post("/api/users/login", name);
+    login: function(user) {
+        return axios.post("/api/users/login", user);
     },
     //make user
     signup: function(userInfo) {

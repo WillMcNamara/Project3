@@ -29,12 +29,17 @@ class Footer extends Component {
 
     login = e => {
         e.preventDefault();
-        API.login(this.state.user).then(res => {
-            if (!res) {
+        API.login({user: this.state.user}).then(res => {
+            console.log(res.data);
+            if (res.data.length === 0) {
                 return console.log("no user");
             } 
-            else if (this.state.password = res.password) {
-                window.localStorage.setItem("user", res.user);
+            else if (this.state.password === res.data[0].password) {
+                window.localStorage.setItem("user", res.data[0].user);
+                console.log(`logged in as ${res.data[0].user}`)
+            }
+            else {
+                console.log("username and password dont match")
             }
         })
     }
@@ -45,7 +50,7 @@ class Footer extends Component {
             user: this.state.user, 
             password: this.state.password
             }).then(res => {
-                console.log(res);
+                window.localStorage.setItem("user", res.data.user);
         })
     }
 

@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
     //login
     login: function(req, res) {
-      db.Users.find()
+      db.Users.find({user: req.body.user})
         .then(dbUsers => res.json(dbUsers))
         .catch(err => res.status(422).json(err));
     },
