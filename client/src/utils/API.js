@@ -21,15 +21,15 @@ export default {
     deleteNewsId: function(id) {
         return axios.delete(`/api/news/${id}`);
     },
+    //grabs images for gallery
+    getImg: function() {
+        return axios.get("/api/gals/images");
+    },
+    //grabs videos for gallery 
+    getVid: function() {
+        return axios.get("/api/gals/videos");
+    },
     // 
-    // get: function() {
-    //     return axios.get("/api/");
-    // },
-    // // 
-    // get: function() {
-    //     return axios.get("/api/");
-    // },
-    // // 
     // get: function() {
     //     return axios.get("/api/");
     // },

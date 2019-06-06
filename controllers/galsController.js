@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the GalsController
 module.exports = {
     findAllImg: function(req, res) {
-      db.Images.find(req.query)
+      db.Images.find()
         .then(dbImages => res.json(dbImages))
         .catch(err => res.status(422).json(err));
     },
@@ -19,7 +19,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     findAllVid: function(req, res) {
-      db.Videos.find(req.query)
+      db.Videos.find()
         .then(dbVideos => res.json(dbVideos))
         .catch(err => res.status(422).json(err));
     },

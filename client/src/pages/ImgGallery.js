@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Container, Row, Col} from "../components/grid";
 import Image from "../components/Image";
+import API from "../utils/API";
 
 class ImgGallery extends Component {
 
@@ -9,38 +10,36 @@ class ImgGallery extends Component {
             {
                 id: 0,
                 title: "0",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
+                link: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
             },
             {
                 id: 1,
                 title: "1",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg"
+                link: "https://www.w3schools.com/w3css/img_snow_wide.jpg"
             },
-            {
-                id: 2,
-                title: "2",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
-            },
-            {
-                id: 3,
-                title: "3",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg"
-            },
-            {
-                id: 4,
-                title: "4",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg"
-            },
-            {
-                id: 5,
-                title: "5",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg"
-            }
         ]
     }
 
+    componentDidMount(){
+        this.loadImg()
+    }
+
+    loadImg = () => {
+        API.getImg()
+        .then(res =>
+            this.setState({
+                images: res.data
+            })
+        )
+        .catch(() =>
+            this.setState({
+                images: []
+            })
+        );
+    }
+
     render() {
-        
+        console.log(this.state)
         const imageRows = [];
         // format the images into rows
         for (let i = 0; i < this.state.images.length; i += 2) {
@@ -50,19 +49,19 @@ class ImgGallery extends Component {
                 >
                     <Col size="md-6" classes="text-center">
                         <Image
-                            id={this.state.images[i].id}
-                            key={this.state.images[i].id}
+                            id={this.state.images[i]._id}
+                            key={this.state.images[i]._id}
                             title={this.state.images[i].title}
-                            src={this.state.images[i].src}
+                            src={this.state.images[i].link}
                         />
                     </Col> 
                     
                     <Col size="md-6" classes="text-center">
                         <Image
-                            id={this.state.images[i+1].id}
-                            key={this.state.images[i+1].id}
+                            id={this.state.images[i+1]._id}
+                            key={this.state.images[i+1]._id}
                             title={this.state.images[i+1].title}
-                            src={this.state.images[i+1].src}
+                            src={this.state.images[i+1].link}
                         />
                     </Col>
                 </Row>
