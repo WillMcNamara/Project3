@@ -38,10 +38,10 @@ export default {
         console.log(userInfo)
         return axios.post("/api/users/signup", userInfo);
     },
-    // 
-    // get: function() {
-    //     return axios.get("/api/");
-    // },
+    //email contact form info
+    email: function(email) {
+        return axios.post("/api/email", email);
+    },
     // // 
     // get: function() {
     //     return axios.get("/api/");
