@@ -11,19 +11,44 @@ class Footer extends Component {
       show: false,
       user: "",
       password: "",
+      perms: -1
     };
 
+    //check perms on page load
+    componentDidMount(){
+        this.checkperms();
+    }
+
+    //standard form input
     handleInputChange = event => {
         const {name, value} = event.target;
         this.setState({
             [name]: value
         });
     };
-    
-    handleClose = () => this.setState({ show: false });
 
+    //if loggin in, set perms to stored value, otherwise set to -1
+    checkperms = () => {
+        if (window.localStorage.getItem("perms") !== null){
+            this.setState({perms: window.localStorage.getItem("perms")});
+        }
+        else {
+            this.setState({perms: -1})
+        }
+    };
+    
+    //close modal
+    handleClose = () => this.setState({ show: false });
+    //open modal
     handleShow = () => this.setState({ show: true });
 
+    //clear storage on logout, set perms to -1
+    logout = () => {
+        window.localStorage.clear()
+        window.location.reload();
+    }
+
+    //login function
     login = e => {
         e.preventDefault();
         API.login({user: this.state.user}).then(res => {
@@ -35,6 +60,7 @@ class Footer extends Component {
                 window.localStorage.setItem("perms", res.data[0].level);
                 console.log(`logged in as ${res.data[0].user}`)
                 this.handleClose();
+                window.location.reload();
             }
             else {
                 console.log("username and password dont match")
@@ -42,6 +68,7 @@ class Footer extends Component {
         });
     };
 
+    //signup function
     signUp = e => {
         e.preventDefault();
         //check if user exists
@@ -63,16 +90,19 @@ class Footer extends Component {
     };
 
     render() {
+        console.log(this.state.perms)
         return (
             <footer className="pt-2 small border-top border-dark">
-
                 <div className="container pb-0">
                     <Row>
                         <Col size="md-3">
                             <div className="footer-links text-center">
-                                <Button variant="primary" onClick={this.handleShow}>
-                                Login
-                                </Button>
+                                {this.state.perms < 0 ? <Button variant="primary" onClick={this.handleShow}>
+                                    Login
+                                </Button> :
+                                <Button variant="primary" onClick={this.logout}>
+                                    Logout
+                                </Button>}
                                 <Modal show={this.state.show} onHide={this.handleClose}>
                                     <Modal.Header closeButton>
                                         <Modal.Title>Login</Modal.Title>

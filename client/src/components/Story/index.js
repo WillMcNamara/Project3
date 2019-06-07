@@ -13,7 +13,7 @@ function Story({ title, author, image, synopsis, id, Button}){
                 <a href={`/Article/${id}`}>
                     <h4 className="story-title">{title}</h4>
                 </a>
-                <Button />
+                {Button ? <Button /> : ""}
                 <h5 className="story-author">{author}</h5>
                 <p className="story-text">{synopsis}</p>
             </Col>
