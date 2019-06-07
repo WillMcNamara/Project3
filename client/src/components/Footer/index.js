@@ -7,9 +7,6 @@ import API from "../../utils/API";
 
 class Footer extends Component {
 
-    // handleShow = this.handleShow.bind(this);
-    // handleClose = this.handleClose.bind(this);
-
     state = {
       show: false,
       user: "",
@@ -35,24 +32,35 @@ class Footer extends Component {
                 return console.log("no user");
             } 
             else if (this.state.password === res.data[0].password) {
-                window.localStorage.setItem("user", res.data[0].user);
+                window.localStorage.setItem("perms", res.data[0].level);
                 console.log(`logged in as ${res.data[0].user}`)
+                this.handleClose();
             }
             else {
                 console.log("username and password dont match")
-            }
-        })
-    }
+            };
+        });
+    };
 
     signUp = e => {
         e.preventDefault();
-        API.signup({
-            user: this.state.user, 
-            password: this.state.password
-            }).then(res => {
-                window.localStorage.setItem("user", res.data.user);
-        })
-    }
+        //check if user exists
+        API.login({user: this.state.user}).then(res => {
+            if (res.data.length === 0) {
+                //if user doesn't exist, then signup
+                API.signup({
+                    user: this.state.user, 
+                    password: this.state.password
+                    }).then(res => {
+                        window.localStorage.setItem("perms", res.data.level);
+                });
+                this.handleClose();
+            }
+            else {
+                console.log("user already exists")
+            }
+        });
+    };
 
     render() {
         return (
