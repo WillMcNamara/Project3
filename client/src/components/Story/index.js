@@ -6,7 +6,7 @@ function Story({ title, author, image, synopsis, id, Button}){
 
     return(
         <Row classes="pt-2">
-            <Col size="md-4" classes="news-row">
+            <Col size="md-4" classes="news-row text-center py-3">
                 <img className="news-img" alt={title} src={image}/>
             </Col>
             <Col size="md-8" classes="news-row">
