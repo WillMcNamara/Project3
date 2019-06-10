@@ -7,29 +7,34 @@ class Home extends Component {
         links: [
             {
                 id: 1,
-                description: "this is a link",
-                src: "www.gotothislink.com"
+                description: "The website of our annual race, the Independence Dragon Boat Regatta",
+                src: "https://www.grunsports.com/db/idbr/index.cfm"
             },
             {
-                id: 1,
-                description: "this is a link",
-                src: "www.gotothislink.com"
+                id: 2,
+                description: "United States Dragon Boat Federation",
+                src: "https://www.usdbf.org/"
             },
             {
-                id: 1,
-                description: "this is a link",
-                src: "www.gotothislink.com"
+                id: 3,
+                description: "International Dragon Boat Federation",
+                src: "https://www.dragonboat.sport/"
             },
             {
-                id: 1,
-                description: "this is a link",
-                src: "www.gotothislink.com"
+                id: 4,
+                description: "Rules & Regulations",
+                src: "https://www.dragonboat.sport/docs"
             },
             {
-                id: 1,
-                description: "this is a link",
-                src: "www.gotothislink.com"
+                id: 5,
+                description: "Our Online Store",
+                src: "https://philadelphiadragonboatassociation.mysimplestore.com/"
             },
+            {
+                id: 6,
+                description: "Download and Sign Waviers",
+                src: "#"
+            }
         ]
     }
 
@@ -39,8 +44,8 @@ class Home extends Component {
                 {this.state.links.map( link => {
                     return(
                         <Row>
-                            <Col size="md-12">
-                                <p>{link.description}</p>
+                            <Col size="md-12" classes="pb-4">
+                                <p className="my-0">{link.description}</p>
                                 <a href={link.src}>{link.src}</a>
                             </Col>
                         </Row>
