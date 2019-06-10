@@ -9,11 +9,11 @@ class About extends Component {
             {
                 id: 1,
                 alt: "pic1",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg",
+                src: "http://nebula.wsimg.com/d98c489789b4d393dfea13a329dd4bac?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1",
             },            {
                 id: 2,
                 alt: "pic2",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg",
+                src: "http://nebula.wsimg.com/6be490f0ec1bcd944bf9399809df1418?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1",
 
             },
         ],
@@ -21,11 +21,11 @@ class About extends Component {
             {
                 id: 1,
                 alt: "pic1",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg",
+                src: "http://nebula.wsimg.com/347a6655eefaa730e01b32c513731a73?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1",
             },            {
                 id: 2,
                 alt: "pic2",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg",
+                src: "http://nebula.wsimg.com/286510dcd483bde688d592757c77973a?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1",
 
             },
         ],
@@ -72,7 +72,7 @@ class About extends Component {
                                 <h3>Bob McNamara</h3>
                             </Col>
                             <Col size="md-6">
-                                <img src="#" alt="Coach Bob"/>
+                                <img src="http://nebula.wsimg.com/9d5abe194ff10e607bc41744bab00ccf?AccessKeyId=C5BFFEBD8C6E0486FB19&disposition=0&alloworigin=1" alt="Coach Bob"/>
                             </Col>
                         </Row>
                         <p>​Robert McNamara, MD is the most successful dragon boat coach in the USA; in fact no one is even close. Teams coached or co-coached by him have won over 100 IDBF World Championship medals including 23 gold medals at IDBF World Championships. He will enter his 31st year of coaching in 2017.</p>
@@ -80,8 +80,9 @@ class About extends Component {
                         <p>Bob began this sport as a paddler in the 1984 and 1985 dragon boat team that represented the US in the Hong Kong international races. He was then asked to coach in 1986 based on his prior success coaching college and high school rowing teams (two national championships). Since 1986 he has served as the head coach of the Philadelphia Dragon Boat Team winning numerous US national titles. <strong>Bob has taken PDBA members with no paddling experience from the novice level to the top of the podium at the World Championships.</strong></p>
                         <p>An active paddler himself, Coach McNamara has raced in every world championship to date and actively races outrigger and marathon canoe. He also sits on the board of the Board of the International Dragon Boat Federation as Chair of the Medical Science and Sports Commission. </p>
                         <p>All four of his children have won world championship medals for team USA. Bob also serves as Chair of Emergency Medicine at Temple University Hospital.</p>
-                        
+                        <div className="text-center">
                         <img className="slides" alt={this.state.images[this.state.slideIndex].alt} src={this.state.images[this.state.slideIndex].src} key={this.state.images[this.state.slideIndex].id}/>
+                        </div>
                         <div>
                             <div className="text-center py-2">
                                 <button onClick={this.prev}>❮ Prev</button>
@@ -127,8 +128,8 @@ class About extends Component {
                         <p>Colleen McNamara has been an active member of PDBA since 2003, where she started on the youth team. She has been to more world championships that any other female paddler in the United States. She attended her first worlds in 2001 in Philadelphia and won her first gold medal ten years later at Worlds in Tampa. She is a 5x world champion and has won many medals at world championships as a member of the youth team, premier women and premier mixed teams. </p>
                         <p>Colleen joined the PDBA coaching staff in 2016 with the goal to revitalize a successful women's program. </p>
                     </Col>
-                    <Col size="md-5">
-                    <img className="slides pt-2" alt={this.state.images[this.state.slideIndex2].alt} src={this.state.images[this.state.slideIndex2].src} key={this.state.images[this.state.slideIndex2].id}/>
+                    <Col size="md-5" classes="text-center">
+                    <img className="slides pt-2" alt={this.state.images2[this.state.slideIndex2].alt} src={this.state.images2[this.state.slideIndex2].src} key={this.state.images[this.state.slideIndex2].id}/>
                         <div>
                             <div className="text-center py-2">
                                 <button onClick={this.prev2}>❮ Prev</button>
@@ -139,7 +140,7 @@ class About extends Component {
                 </Row>
                 <Row>
                     <Col size="md-12" classes="text-center">
-                        <h4>2017 Results</h4>
+                        <h4>2018 Results</h4>
                         <p className="results"><strong>Baltimore</strong></p>
                         <p className="results">Premier Mixed - Bronze</p>
                         <p className="results"><strong>Long Beach</strong></p>
