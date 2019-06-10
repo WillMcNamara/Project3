@@ -9,13 +9,24 @@ class Home extends Component {
             {
                 id: 1,
                 alt: "pic1",
-                src: "https://www.w3schools.com/w3css/img_nature_wide.jpg",
-            },            {
+                src: "https://scontent.fphl2-1.fna.fbcdn.net/v/t31.0-8/21762560_1796407503721449_694293922731881520_o.jpg?_nc_cat=107&_nc_ht=scontent.fphl2-1.fna&oh=4f13d4b1234000ed5b1bdbac35e6a358&oe=5D98DBF6",
+            },            
+            {
                 id: 2,
                 alt: "pic2",
-                src: "https://www.w3schools.com/w3css/img_snow_wide.jpg",
-
+                src: "https://scontent.fphl2-3.fna.fbcdn.net/v/t1.0-9/22195932_1809385222423677_3565885577271469442_n.jpg?_nc_cat=109&_nc_ht=scontent.fphl2-3.fna&oh=e520b901b1c7579cac5948d0ea91112a&oe=5D9E5675",
             },
+            {
+                id: 3,
+                alt: "pic3",
+                src: "https://scontent.fphl2-1.fna.fbcdn.net/v/t1.0-9/28280072_1970724582956406_7613774869923665055_n.jpg?_nc_cat=107&_nc_ht=scontent.fphl2-1.fna&oh=f9f6fed60bd3d22edce2e22f7f9bde5c&oe=5D88317A",
+            },
+            {
+                id: 4,
+                alt: "pic4",
+                src: "https://scontent.fphl2-4.fna.fbcdn.net/v/t1.0-9/13076768_1279374188758119_6972669152479570870_n.jpg?_nc_cat=108&_nc_ht=scontent.fphl2-4.fna&oh=e82f5cb95a2f8b171e7fd28b2c9e4c9f&oe=5D8CF085",
+            },
+            
         ],
         slideIndex: 0
     }
@@ -61,7 +72,7 @@ class Home extends Component {
                         </div>
                     </Col>
                     <Col size="md-6 text-center">
-                        <img className="slides" alt={this.state.images[this.state.slideIndex].alt} src={this.state.images[this.state.slideIndex].src} key={this.state.images[this.state.slideIndex].id}/>
+                        <img className="slides mt-3" alt={this.state.images[this.state.slideIndex].alt} src={this.state.images[this.state.slideIndex].src} key={this.state.images[this.state.slideIndex].id}/>
                         <div>
                             <div>
                                 <button onClick={this.prev}>❮ Prev</button>
